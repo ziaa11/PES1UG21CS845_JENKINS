@@ -3,13 +3,13 @@ pipeline {
     stages {
       stage('Build') {
         steps {
-          sh 'g++ main/sample.cpp'
+          sh 'g++ -o output main/sample.cpp'
           build 'PES1UG21CS845-1'
         }
       }
       stage('Test') {
         steps {
-        sh './a'
+        sh './output'
         }
       }
       stage('Deploy') {
